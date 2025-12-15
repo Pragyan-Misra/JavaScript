@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Function</title>
+    <style>
+        #btn{
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    
+    <script>
+
+        // anonymous function
+        let sum= function(num1,num2) {
+            return num1+num2;
+        }
+        console.log(sum(2,7));
+
+        // Arrow function
+        let sum1= (num1,num2) => {
+            return num1+num2;
+        }
+        console.log(sum1(4,8));
+        console.log(typeof(sum1));
+
+        let square= num => num*num;
+        console.log(square(6));
+
+        // setTimeout and setInterval
+        // setTimeout runs once:
+        // syntax: setTimeout(function, time)
+        // cancel: clearTimeout(timerID)
+        // setInterval runs repeatedly:
+        // syntax: setInterval(funtion, time) 
+        // cancel: clearInterval(intervalID)
+        // time is written in milisecond, 1 sec = 1000 milisecond 
+
+        let alarm= () => console.log(`subha hogyi, uth jao ${new Date()}`);
+    
+        let timerId=setTimeout(alarm,3000);
+        // setTimeout returns a timer id
+        console.log(`Alaram set with timer id: ${timerId}`);
+        clearTimeout(timerId);
+        // in clearTimeout() timer Id is given. Syntax: clearTimeout(Timer Id)
+
+        let intervalID=setInterval(alarm,2000);
+        setInterval(() => clearInterval(intervalID),5000); // here we used clearInterval as a function inside setTimer so that it clears after a specific interval of timme
+
+        // EVENT LISTENER
+        // event like click,mouse movement and keyboard input, if any event happens then do the given funtion
+        // Syntax: object.addEventListener('click')
+        let button=document.querySelector('#btn')
+        let behaviour=() => console.log('i am clicked')
+        let print= ()=> console.log('mai bach gya');
+        button.addEventListener('click',behaviour);
+        button.addEventListener('click',print);
+        document.addEventListener('mousemove',event => console.log('mouse is moved'));
+        document.addEventListener('keypress',event => console.log('key is pressed'));
+
+        // removeEventListener is used to remove a pre-defined event
+        // Syntax: object.removeEventListener('event', funtion); object,event,function these all should be the same as defined in the addEventListener
+        button.removeEventListener('click',behaviour);
+         
+
+    </script>
+</body>
+</html>
