@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #press{
+            height: 40px;
+            width: 500px;
+        }
+        .js-odd{
+            background-color: aqua;
+        }
+        .js-even{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="press" class="js-even" onclick="press()"></button>
+    <script>
+        let val=localStorage.getItem('val') || 0;
+        document.querySelector('#press').innerText=`Number of times Pressed: ${val}`
+        function press() {
+            val++;
+            localStorage.setItem('val',val);
+            document.querySelector('#press').innerText=`Number of times Pressed: ${val}`;
+            let button=document.querySelector('#press')
+            if(val%2==0) {
+                button.classList.remove('js-odd');
+                button.classList.add('js-even');
+            }
+            else {
+                button.classList.remove('js-even');
+                button.classList.add('js-odd');
+            }
+        }
+    </script>
+</body>
+</html>

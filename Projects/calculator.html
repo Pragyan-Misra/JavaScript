@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 3px solid;
+            width: 200px;
+        }
+        #cal{
+            margin: 6px;
+            width: 180px;
+            height: 50px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+        ._1{
+            margin: 10px 10px 0px 11px;
+            display: grid;
+            grid-template-columns: 45px 45px 45px 45px;
+            grid-template-rows: 43px 43px 43px 43px 0px;
+        }
+        #C{
+            height: 40px;
+            width: 40px;   
+            grid-column: 2/4;
+            grid-row: 1/5;
+        }
+        #_1{
+            height: 40px;
+            width: 40px;
+            grid-column: 1/4;
+            grid-row: 2/5;
+        }
+        #_2{
+            height: 40px;
+            width: 40px;
+            grid-column: 2/4;
+            grid-row: 2/5;
+        }
+        #_3{
+            height: 40px;
+            width: 40px;
+            grid-column: 3/4;
+            grid-row: 2/5;
+        }
+        #_4{
+            height: 40px;
+            width: 40px;
+            grid-column: 1/4;
+            grid-row: 3/5;
+        }
+        #_5{
+            height: 40px;
+            width: 40px;
+            grid-column: 2/4;
+            grid-row: 3/5;
+        }
+        #_6{
+            height: 40px;
+            width: 40px;
+            grid-column: 3/4;
+            grid-row: 3/5;
+        }
+        #_7{
+            height: 40px;
+            width: 40px;   
+            grid-column: 1/4;
+            grid-row: 4/5;
+        }
+        #_8{
+            height: 40px;
+            width: 40px;
+            grid-column: 2/4;
+            grid-row: 4/5;
+        }
+        #_9{
+            height: 40px;
+            width: 40px;
+            grid-column: 3/4;
+            grid-row: 4/5;
+        }
+        #_0{
+            margin: 0px 0 10px 78px;
+            height: 40px;
+            width: 40px;   
+            grid-column: 2/4;
+            grid-row: 5/5;
+        }
+        #add{
+            height: 40px;
+            width: 40px;   
+            grid-column: 4/4;
+            grid-row: 1/5;
+        }
+        #subt{
+            height: 40px;
+            width: 40px;   
+            grid-column: 4/4;
+            grid-row: 2/5;
+        }
+        #multi{
+            height: 40px;
+            width: 40px;   
+            grid-column: 4/4;
+            grid-row: 3/5;
+        }
+        #divi{
+            height: 40px;
+            width: 40px;   
+            grid-column: 4/4;
+            grid-row: 4/5;
+        }
+        #dec{
+            height: 40px;
+            width: 40px;
+            grid-column: 3/4;
+            grid-row: 1/5;
+        }
+        #equal{
+            height: 40px;
+            width: 40px;   
+            grid-column: 1/4;
+            grid-row: 1/5;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="5" id="cal" readonly>
+        <div class="_1">        
+            <button class="cal" id="C" onclick="val='';
+            document.querySelector('#cal').value = val;">C</button>
+            <button class="cal" id="_1" onclick="val=val+1;
+            document.querySelector('#cal').value = val;">1</button>
+            <button class="cal" id="_2" onclick="val=val+2;document.querySelector('#cal').value = val;">2</button>
+            <button class="cal" id="_3" onclick="val=val+3;document.querySelector('#cal').value = val;">3</button>
+            <button class="cal" id="_4" onclick="val=val+4;document.querySelector('#cal').value = val;">4</button>
+            <button class="cal" id="_5" onclick="val=val+5;document.querySelector('#cal').value = val;">5</button>
+            <button class="cal" id="_6" onclick="val=val+6;document.querySelector('#cal').value = val;">6</button>
+            <button class="cal" id="_7" onclick="val=val+7;document.querySelector('#cal').value = val;">7</button>
+            <button class="cal" id="_8" onclick="val=val+8;document.querySelector('#cal').value = val;">8</button>
+            <button class="cal" id="_9" onclick="val=val+9;document.querySelector('#cal').value = val;">9</button>
+            
+            <button class="cal" id="add" onclick="val=val+'+';
+            document.querySelector('#cal').value = val;">+</button>
+            <button class="cal" id="subt" onclick="val=val+'-';document.querySelector('#cal').value = val;">-</button>
+            <button class="cal" id="multi" onclick="val=val+'*';document.querySelector('#cal').value = val;">*</button>
+            <button class="cal" id="divi" onclick="val=val+'/';document.querySelector('#cal').value = val;">/</button>
+            <button class="cal" id="dec" onclick="val=val+'.';document.querySelector('#cal').value = val;">.</button>
+            <button class="cal" id="equal" onclick="document.querySelector('#cal').value=(eval(val));">=</button>
+        </div>
+        <button class="cal" id="_0">0</button>
+    </div>
+
+    <script>
+        let val ='';
+        document.querySelector('#cal').value = val
+        
+        // for input tag .value is used to display
+    </script>
+</body>
+</html>
