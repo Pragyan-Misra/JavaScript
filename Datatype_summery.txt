@@ -1,0 +1,20 @@
+Js is Dynamically typed language.
+
+Primitive
+  7 types:
+  String, number, Boolean, null, undefined, Symbol, Bigint.
+
+Non-Primitive
+  Array, object, Function
+
+Type of null is Object.
+
+***********************Memory********************
+
+Stack and Heap Memory
+
+Stack Memory is used for all Primitive types.
+When a variable is defined we get a copy of it.
+
+Heap Memory is used for Non Primitive types.
+here we get the reference of the original value.
