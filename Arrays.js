@@ -63,3 +63,4 @@ const s2 = 2;
 const s3 = true;
 const arr2 = Array.of(s1,s2,s3); // creates a new array instance with a variable number of arguments
 console.log(arr2);
+
