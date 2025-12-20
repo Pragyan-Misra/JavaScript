@@ -1,4 +1,5 @@
 const arr = [1, 2, 3, 4, 5];
+// arrays also have keys, these keys are implicitly decleared as 0,1,2,3,4.. and so on. 0 is assigned to the first element and so on just like indexing.
 console.log(arr);
 console.log(typeof arr);
 // when ever an operation is performed on an array is makes a shallow copy of the array. means it is copy that shares same reference point in memory ie any change in the copy will reflect in the original array.
