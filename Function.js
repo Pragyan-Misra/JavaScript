@@ -45,14 +45,13 @@ getFullName(user);
 getFullName({firstName: "John", lastName: "Doe"});
 
 
-// Arrow Functions
 
 const user1 = {
   username : "Pragyan",
   price : 1000,
   welcomeMessage : function() {
     console.log(`Welcome ${this.username} to website`);
-  }
+  } // function with no name is called a call-back function
 };
 
 user1.welcomeMessage();
@@ -70,6 +69,9 @@ const chai1 = function() {
   console.log(this);
 }
 chai1();
+
+
+// Arrow Functions
 
 const chai = () => {
   let username = "Pragyan";
