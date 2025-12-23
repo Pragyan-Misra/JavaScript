@@ -1,0 +1,27 @@
+.div{
+  text-align: center;
+}
+
+.button {
+  height: 100px;
+  width: 100px;
+  border: 3px solid black;
+  border-radius: 2px;
+  margin: 5px;
+}
+#grey {
+  background-color: grey;
+}
+#green {
+  background-color: green;
+}
+#blue {
+  background-color: blue;
+}
+#yellow {
+  background-color: yellow;
+}
+#white{
+  height: 40px;
+  background-color: white;
+}
