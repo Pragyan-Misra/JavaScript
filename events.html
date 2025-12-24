@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list{
+      height: 100px;
+      width: 100px;
+      border: 2px solid black;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body style="background-color: #414241;">
+  <ul id="ul">
+    <li class="list" id="1"></li>
+    <li class="list" id="2"></li>
+    <li class="list" id="3"></li>
+    <li class="list" id="4"></li>
+    <li class="list" id="5"></li>
+  </ul>
+</body>
+<script>
+  //type, timestamp, defaultPrevent
+  // target, toElement, currentTarget ,srcElement
+  // clinetX, clinetY, screenX, screenY
+  // altkey, ctrlkey, shiftkey. keycode
+
+  document.getElementById('1').addEventListener('click',(e)=>{
+    alert(e.timeStamp)
+  }, false) //this 3rd parameter is given false because usually we use event bubbling
+  // Event propogation is of 2 type - Event bubbling and event capturing
+  // for event capturing we provide true
+
+  document.getElementById('ul').addEventListener('click', (e) => {alert("clicked first box")}, false)
+
+
+  document.getElementById('2').addEventListener('click', (e) => {alert("clicked second box")
+    e.stopPropagation() // it will prevent the propogation
+  }, true)
+  // if the event propogation is true the it will have top down approch that is first the out command will run then inner one. capturing
+  // if it is false then, firstly the inner commands will run then the outer one. bubbling
+
+  document.getElementById('5').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    alert("fifth clicked")
+  } , false)
+
+  document.querySelector('#ul').addEventListener('click', (e) => {
+    if(e.target.tagName === 'IMG'){
+      let removeIt = e.target,parentNode
+      removeIt.remove()
+    }
+    let removeIt = e.target.parentNode
+    removeIt.parentNode.removeChild(removeIt)
+  },false)
+  </script>
+</html>
