@@ -34,7 +34,7 @@
   // Event propogation is of 2 type - Event bubbling and event capturing
   // for event capturing we provide true
 
-  document.getElementById('ul').addEventListener('click', (e) => {alert("clicked first box")}, false)
+  document.getElementById('ul').addEventListener('click', (e) => {alert("clicked box")}, false)
 
 
   document.getElementById('2').addEventListener('click', (e) => {alert("clicked second box")
@@ -50,12 +50,11 @@
   } , false)
 
   document.querySelector('#ul').addEventListener('click', (e) => {
-    if(e.target.tagName === 'IMG'){
-      let removeIt = e.target,parentNode
-      removeIt.remove()
+    if(e.target.tagName === 'LI'){
+      let removeIt = e.target.parentNode
+      removeIt.removeChild(e.target)
     }
-    let removeIt = e.target.parentNode
-    removeIt.parentNode.removeChild(removeIt)
-  },false)
+    
+    },false)
   </script>
 </html>
