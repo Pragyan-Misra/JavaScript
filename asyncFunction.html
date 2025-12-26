@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="div">
+    <h1>Misraji</h1>
+    <button id="stop">Change</button>
+  </div>
+</body>
+<script>
+  document.getElementById('stop').addEventListener('click',() => { 
+    setTimeout( function() {
+   document.querySelector('h1').innerText = "Pragyan Misra ji" 
+  }, 2000)
+}) // setTimeout() : executes the specified function after the specificed time
+
+
+</script>
+</html>
