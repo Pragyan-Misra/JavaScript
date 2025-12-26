@@ -9,16 +9,26 @@
   
   <div class="div">
     <h1>Misraji</h1>
-    <button id="stop">Change</button>
+    <button id="change">Change</button>
+    <button id="stop">Stop</button>
   </div>
 </body>
 <script>
-  document.getElementById('stop').addEventListener('click',() => { 
+  const change = document.getElementById('change').addEventListener('click',() => { 
     setTimeout( function() {
    document.querySelector('h1').innerText = "Pragyan Misra ji" 
   }, 2000)
 }) // setTimeout() : executes the specified function after the specificed time
-
+ document.querySelector('#stop').addEventListener('click', function() {
+  clearTimeout(change)
+ })
+ const print = function(str) {
+  console.log(`Pragyan ${str}` , Date.now())
+ }
+const invertalid = setInterval(print , 100, 'Misra')
+ document.querySelector('#stop').addEventListener('click', function() {
+  clearInterval(invertalid);
+ })
 
 </script>
 </html>
