@@ -57,3 +57,48 @@ promiseFour
 // .then() when promise is resolved
 // .catch() when inner work is not correct, reject is sent
 
+const promiseFive = new Promise( (resolve, reject) => {
+  setTimeout(()=>{
+    // let error = Math.floor(Math.random()*2) ? true : false;
+    let error = false
+    if(error){
+      resolve({usernmae: "Pragyan", emial: "misra@123"})
+    } else {
+      reject('ERROR: Something went wrong') // reject means error code
+    }
+  }, 1000)
+})
+
+async function consumePromiseFive(){ // it does not handles error directly, it will stop if response doesnt come. So we have to use try-catch block
+  try {
+    const response = await promiseFive
+    console.log(response)
+  } catch (error) {
+    console.log(error)
+  }
+}
+consumePromiseFive();
+
+// async function getAllUsers() {
+//   try{
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//   const data = await response.json();
+//   console.log(data)
+//   }
+//   catch(error){
+//     console.log(error)
+//   }
+// }
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users').then( (response) => {
+  return response.json()
+})
+.then( ( [data] ) => {
+  console.log(data);
+})
+.catch( 
+  (error) => {
+    console.log(error)
+  }
+)
