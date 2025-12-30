@@ -84,3 +84,19 @@ const TASupport = {
 }
 
 Object.setPrototypeOf(TeacherSuppot, Teacher) // this always one to access other one's property
+
+function SetUserName(username){
+  this.username = username
+  console.log("called")
+}
+
+function createuser(username, email, password){
+  SetUserName.call(this,username) //  .call() is used to hold the reference
+  // this is so that the things are stored in passed this not the this of function as it will vanish away when function complete it work
+
+  this.email = email
+  this.password = password
+}
+
+const details = new createuser("Pragyan", "sdfdf@sdvf","1234")
+console.log(details)
