@@ -24,13 +24,16 @@
         document.querySelector('#press').innerText=`Number of times Pressed: ${val}`
         function press() {
             val++;
+
             localStorage.setItem('val',val);
+
             document.querySelector('#press').innerText=`Number of times Pressed: ${val}`;
+
             let button=document.querySelector('#press')
-            if(val%2==0) {
+            if( val%2 == 0 ) {
                 button.classList.remove('js-odd');
                 button.classList.add('js-even');
-            }
+            } // if even then removing odd and adding even
             else {
                 button.classList.remove('js-even');
                 button.classList.add('js-odd');
